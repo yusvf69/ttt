@@ -1,0 +1,9 @@
+{
+  "buildCommand": "cd artifacts/organic-chem-textbook && npm run build",
+  "outputDirectory": "artifacts/organic-chem-textbook/dist/public",
+  "installCommand": "pnpm install",
+  "framework": null,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
