@@ -7,6 +7,7 @@ import ChapterPage from "@/pages/ChapterPage";
 import CheatSheet from "@/pages/CheatSheet";
 import ExamPage from "@/pages/ExamPage";
 import PDFsPage from "@/pages/PDFsPage";
+import ReactionsPage from "@/pages/ReactionsPage";
 import { chapters } from "@/data/chapters";
 
 function Sidebar({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -82,6 +83,13 @@ function Sidebar({ open, onClose }: { open: boolean; onClose: () => void }) {
             <span>الامتحان الشامل</span>
           </Link>
           <Link
+            href="/reactions"
+            className={`nav-item flex items-center gap-3 px-4 py-2.5 rounded-lg mb-1 cursor-pointer text-sm ${location === "/reactions" ? "nav-active" : "text-gray-600 hover:text-gray-900"}`}
+          >
+            <span className="text-lg">⚗️</span>
+            <span>جميع المعادلات</span>
+          </Link>
+          <Link
             href="/pdfs"
             className={`nav-item flex items-center gap-3 px-4 py-2.5 rounded-lg mb-1 cursor-pointer text-sm ${location === "/pdfs" ? "nav-active" : "text-gray-600 hover:text-gray-900"}`}
           >
@@ -141,6 +149,7 @@ function App() {
               <Route path="/cheatsheet" component={CheatSheet} />
               <Route path="/exam" component={ExamPage} />
               <Route path="/pdfs" component={PDFsPage} />
+              <Route path="/reactions" component={ReactionsPage} />
               <Route>
                 <div className="flex items-center justify-center min-h-96">
                   <div className="text-center">
