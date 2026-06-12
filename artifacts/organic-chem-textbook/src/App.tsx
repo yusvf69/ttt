@@ -155,6 +155,16 @@ function App() {
           <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
         </div>
         <Toaster />
+        <footer className="navy-gradient text-white py-4 px-6 text-center text-xs">
+          <a
+            href="https://onz-onz-website.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-200 hover:text-white transition-colors"
+          >
+            طُوِّر بواسطة ONZ
+          </a>
+        </footer>
       </div>
     </WouterRouter>
   );
