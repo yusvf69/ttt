@@ -22,6 +22,12 @@ const reactions = [
   { name: "فينول + NaOH", eq: "C₆H₅OH + NaOH → C₆H₅ONa + H₂O", cat: "فينولات" },
   { name: "نترة الفينول → بيكريك", eq: "C₆H₅OH + 3HNO₃ →(H₂SO₄)→ C₆H₂(NO₂)₃OH", cat: "فينولات" },
   { name: "أكسدة كحول البنزيل", eq: "C₆H₅CH₂OH →[O]→ C₆H₅CHO →[O]→ C₆H₅COOH", cat: "فينولات" },
+  { name: "ثيول → ثنائي كبريتيد", eq: "2RSH →[O]→ R–S–S–R", cat: "كحولات" },
+  { name: "تفكك الإيثر", eq: "R–O–R' + HI → RI + R'OH", cat: "كحولات" },
+  { name: "هدرجة الألكاين", eq: "RC≡CR + H₂ →(Ni)→ RCH=CHR →(H₂)→ RCH₂CH₂R", cat: "ألكينات" },
+  { name: "نزع الكربوكسيل", eq: "RCOONa + NaOH →(CaO/Δ)→ RH + Na₂CO₃", cat: "ألكانات" },
+  { name: "اختزال هاليد", eq: "R-X + Zn/HCl → RH + ZnXCl", cat: "هاليدات" },
+  { name: "هاليد + NH₃ → أمين", eq: "RX + NH₃ → R-NH₂ + HX", cat: "هاليدات" },
 ];
 
 const formulas = [
@@ -33,6 +39,8 @@ const formulas = [
   { name: "البنزين", formula: "C₆H₆", example: "الحلقة العطرية" },
   { name: "هاليدات الألكيل", formula: "R–X", example: "CH₃Cl, C₂H₅Br" },
   { name: "الكحولات", formula: "R–OH", example: "CH₃OH, C₂H₅OH" },
+  { name: "الثيولات", formula: "R–SH", example: "CH₃SH (ميثانثيول)" },
+  { name: "الإيثرات", formula: "R–O–R'", example: "C₂H₅OC₂H₅" },
   { name: "الفينولات", formula: "Ar–OH", example: "C₆H₅OH" },
 ];
 
@@ -58,6 +66,9 @@ const stability = [
   { title: "ثبات cis/trans", order: "trans > cis", tip: "trans أقل ضغطاً فراغياً" },
   { title: "سهولة نزع الماء", order: "3° > 2° > 1°", tip: "الكحول الثالثي أسهل نزع الماء منه" },
   { title: "اختبار لوكاس (سرعة)", order: "3° (فوري) > 2° (بطيء) > 1° (لا يتفاعل)", tip: "مقياس نشاط الكحول" },
+  { title: "نشاط SN1", order: "3° > 2° > 1°", tip: "يعتمد على ثبات الكربوكاتيون" },
+  { title: "نشاط SN2", order: "1° > 2° > 3°", tip: "يعتمد على قلة الإعاقة الفراغية" },
+  { title: "حمضية المركبات", order: "فينول > ثيول > كحول", tip: "pKa: فينول 10، ثيول 11، كحول 16" },
 ];
 
 const importantFacts = [
@@ -69,10 +80,16 @@ const importantFacts = [
   "الكحول الثالثي لا يتأكسد في الظروف العادية",
   "النيوكليوفيل مانح إلكترونات، الإلكتروفيل مستقبل",
   "مجموعات o/p: مانحة للإلكترون. مجموعات meta: ساحبة",
-  "الميثانول سام جداً — يسبب العمى والوفاة",
+  "الميثانول سام جداً — يسبب العمى والوفاة (يُعالج بالإيثانول)",
   "الانشطار المتماثل → جذور حرة؛ غير المتماثل → أيونات",
   "تفاعل فورتز يضاعف عدد الكربونات: 2RX + 2Na → R-R",
   "الباكلايت = أول بلاستيك صناعي (فينول + فورمالدهيد)",
+  "الثيولات (R–SH) أكثر حمضية من الكحولات — رائحة كريهة",
+  "الإيثرات (R–O–R') متعادلة — خطر البيروكسيدات المتفجرة",
+  "SN1: خطوتان عبر كربوكاتيون → خليط راسميك",
+  "SN2: خطوة واحدة → انقلاب فراغي (Walden Inversion)",
+  "قاعدة زايتسيف: الألكين الأكثر استبدالاً هو الأكثر ثباتاً",
+  "الترافق الفائق (Hyperconjugation) يثبت الكربوكاتيون",
 ];
 
 export default function CheatSheet() {
@@ -211,6 +228,8 @@ export default function CheatSheet() {
             { test: "KMnO₄ (بنفسجي)", target: "ألكينات، كحولات أولية/ثانوية", result: "يتحول للون البني/الأخضر" },
             { test: "ورقة النشا+يود (زرقاء)", target: "يود", result: "يتحول للأزرق القاتم" },
             { test: "اختبار NaOH", target: "الفينول (حمضي)", result: "يتفاعل ويكوّن ملح فينوكسيد" },
+            { test: "اختبار الثيول (الرائحة)", target: "R–SH", result: "رائحة كريهة ونفاذة مميزة" },
+            { test: "اختبار البيروكسيد في الإيثر", target: "R–O–R' مؤكسد", result: "يتحوّل لون FeSO₄ إلى بني" },
           ].map((t) => (
             <div key={t.test} className="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
               <div className="font-black text-gray-900 text-sm mb-1">{t.test}</div>

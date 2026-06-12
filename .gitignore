@@ -47,3 +47,7 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Large source PDFs (copies in public/pdfs/ are tracked)
+*.pdf
+!/artifacts/organic-chem-textbook/public/pdfs/*.pdf

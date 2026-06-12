@@ -162,7 +162,42 @@
 
 @media print {
   .no-print { display: none !important; }
-  body { background: white; }
+  .print-only { display: block !important; }
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  .bg-emerald-600, .bg-red-600, .navy-gradient, .gold-gradient, .emerald-gradient {
+    background: #f5f5f5 !important;
+    color: black !important;
+    border: 1px solid #ccc !important;
+  }
+  .bg-emerald-50 { background: #f9f9f9 !important; border-color: #ccc !important; }
+  .bg-red-50 { background: #f9f9f9 !important; border-color: #ccc !important; }
+  .bg-amber-50 { background: #f9f9f9 !important; border-color: #ccc !important; }
+  .bg-white { background: white !important; }
+  .bg-gray-100, .bg-gray-50 { background: #f5f5f5 !important; }
+  .text-white, .text-white\/80, .text-white\/70 { color: black !important; }
+  .text-emerald-600, .text-emerald-700, .text-emerald-800 { color: #2e7d32 !important; }
+  .text-red-600, .text-red-700, .text-red-800 { color: #c62828 !important; }
+  .text-amber-800, .text-amber-900 { color: #333 !important; }
+  .text-gray-400, .text-gray-500, .text-gray-600 { color: #555 !important; }
+  .border-emerald-100, .border-emerald-200, .border-red-100, .border-red-200,
+  .border-amber-200, .border-gray-100, .border-gray-200 { border-color: #ccc !important; }
+  button, .no-print, .sidebar, nav, header, footer { display: none !important; }
+  .print-area, .print-report, .print-results { display: block !important; }
+  a { color: black !important; text-decoration: underline; }
+  @page { margin: 1.5cm; }
+  .page-break { page-break-before: always; }
+  .page-break-avoid { page-break-inside: avoid; }
 }
 
 /* Sidebar active state */

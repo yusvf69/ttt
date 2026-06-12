@@ -51,10 +51,10 @@ export default function Cover() {
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-5xl mx-auto px-6 py-6 grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
-            { icon: "📖", value: "8", label: "فصول كاملة" },
-            { icon: "⚗️", value: "40+", label: "تفاعل كيميائي" },
-            { icon: "❓", value: "60+", label: "سؤال امتحاني" },
-            { icon: "🧠", value: "50+", label: "حيلة للحفظ" },
+            { icon: "📖", value: "13", label: "فصل كامل" },
+            { icon: "⚗️", value: "50+", label: "تفاعل كيميائي" },
+            { icon: "❓", value: "440+", label: "سؤال امتحاني" },
+            { icon: "🧠", value: "80+", label: "حيلة للحفظ" },
           ].map((stat) => (
             <div key={stat.label} className="text-center py-3">
               <div className="text-2xl mb-1">{stat.icon}</div>

@@ -5,6 +5,8 @@ import Cover from "@/pages/Cover";
 import TableOfContents from "@/pages/TableOfContents";
 import ChapterPage from "@/pages/ChapterPage";
 import CheatSheet from "@/pages/CheatSheet";
+import ExamPage from "@/pages/ExamPage";
+import PDFsPage from "@/pages/PDFsPage";
 import { chapters } from "@/data/chapters";
 
 function Sidebar({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -72,6 +74,20 @@ function Sidebar({ open, onClose }: { open: boolean; onClose: () => void }) {
             <span className="text-lg">⚡</span>
             <span>الورقة الذهبية</span>
           </Link>
+          <Link
+            href="/exam"
+            className={`nav-item flex items-center gap-3 px-4 py-2.5 rounded-lg mb-1 cursor-pointer text-sm ${location === "/exam" ? "nav-active" : "text-gray-600 hover:text-gray-900"}`}
+          >
+            <span className="text-lg">📝</span>
+            <span>الامتحان الشامل</span>
+          </Link>
+          <Link
+            href="/pdfs"
+            className={`nav-item flex items-center gap-3 px-4 py-2.5 rounded-lg mb-1 cursor-pointer text-sm ${location === "/pdfs" ? "nav-active" : "text-gray-600 hover:text-gray-900"}`}
+          >
+            <span className="text-lg">📚</span>
+            <span>ملفات PDF</span>
+          </Link>
         </nav>
 
         <div className="p-4 border-t border-gray-100">
@@ -123,6 +139,8 @@ function App() {
               <Route path="/contents" component={TableOfContents} />
               <Route path="/chapter/:id" component={ChapterPage} />
               <Route path="/cheatsheet" component={CheatSheet} />
+              <Route path="/exam" component={ExamPage} />
+              <Route path="/pdfs" component={PDFsPage} />
               <Route>
                 <div className="flex items-center justify-center min-h-96">
                   <div className="text-center">
