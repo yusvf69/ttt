@@ -162,7 +162,7 @@ function App() {
             rel="noopener noreferrer"
             className="text-blue-200 hover:text-white transition-colors"
           >
-            طُوِّر بواسطة ONZ
+            Developed by ONZ
           </a>
         </footer>
       </div>
