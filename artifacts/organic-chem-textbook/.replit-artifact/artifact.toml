@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "الكيمياء العضوية — الكتاب التعليمي"
+version = "1.0.0"
+id = "artifacts/organic-chem-textbook"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18458
+
+[services.development]
+run = "pnpm --filter @workspace/organic-chem-textbook run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/organic-chem-textbook", "run", "build" ]
+publicDir = "artifacts/organic-chem-textbook/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18458"
+BASE_PATH = "/"
